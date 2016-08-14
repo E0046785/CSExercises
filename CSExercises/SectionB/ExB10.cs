@@ -1,5 +1,7 @@
 using System;
 
+
+
 namespace CSExercises
 {
     public class ExB10
@@ -20,13 +22,28 @@ namespace CSExercises
         public static void Main(string[] args)
         {
             //YOUR CODE HERE
+            Console.WriteLine("Enter first side");
+            double a = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter second side");
+            double b = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter third side");
+            double c = Convert.ToDouble(Console.ReadLine());
+            double total = CalculateArea(a, b, c);
+           Console.WriteLine(total);
+           
+            
+            
 
         }
 
         public static double CalculateArea(double a, double b, double c)
         {
             //YOUR CODE HERE
-            return 0;
+            double s = (a + b + c) / 2;
+            double total = s*((s - a) * (s - b) * (s - c));
+
+
+            return Math.Sqrt(s);
         }
     }
 }

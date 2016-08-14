@@ -19,12 +19,17 @@ namespace CSExercises
         public static void Main(string[] args)
         {
             //YOUR CODE HERE
+            Console.WriteLine("Please enter kilometer");
+            double total = CalculateFare(Convert.ToDouble(Console.ReadLine()));
+            Console.WriteLine(total.ToString());
         }
 
         public static double CalculateFare(double distance)
         {
             //YOUR CODE HERE
-            return 0;
+            double totalFares = 2.40 + distance * 0.4;
+
+            return totalFares;
 
         }
     }

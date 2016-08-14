@@ -21,9 +21,8 @@ namespace CSExercises
         public static void Main(string[] args)
         {
             string inputStr = Console.ReadLine();
-            double inputDbl = Convert.ToDouble(inputStr);
-
-            //YOUR CODE HERE
+            double inputDbl = Convert.ToDouble(inputStr);            
+            Console.WriteLine("{0:0.00}",inputDbl);
 
         }
 

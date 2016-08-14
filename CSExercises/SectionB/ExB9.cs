@@ -17,12 +17,18 @@ namespace CSExercises
         public static void Main(string[] args)
         {
             //YOUR CODE HERE
+            Console.WriteLine("Please enter kilometer");
+            double testNum =Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine(CalculateFare(testNum));          
         }
 
         public static double CalculateFare(double distance)
         {
             //YOUR CODE HERE
-            return 0;
+            double totalFares = 2.40 + distance * 0.4;
+            double mul = totalFares * 10;
+            double cel = Math.Ceiling(mul);
+            return cel * 0.1 ;
 
         }
     }

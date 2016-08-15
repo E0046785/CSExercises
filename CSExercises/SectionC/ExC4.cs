@@ -22,15 +22,32 @@ namespace CSExercises
         {
 
             //Your code here
-
+            Console.WriteLine("Please enter distance!");
+            double totalfare = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine(CalculateFare(totalfare));
 
 
         }
 
         public static double CalculateFare(double distance)
         {
+            double totalfare = 0.0;
             //YOUR CODE HERE
-            return 0;
+            if(distance <= 0.5 )
+            {
+                totalfare = 2.4;
+            }
+            else if(distance > 0.5 && distance <= 9)
+            {
+                totalfare = 2.4 + (85 * 0.04);
+            }
+            else
+            {
+                totalfare = 2.4 + (85 * 0.04) + (distance - 9) * 0.05 * 10;
+            }
+
+          
+            return Math.Round(totalfare,1);
 
 
 

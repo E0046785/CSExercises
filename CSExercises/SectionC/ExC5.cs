@@ -18,14 +18,24 @@ namespace CSExercises
         public static void Main(string[] args)
         {
             //YOUR CODE HERE
-
+            Console.WriteLine("Pleae enter 3 digit number::");
+            int digitNum = Convert.ToInt32(Console.ReadLine());
+            bool isArmNum = IsArmstrongNumber(digitNum);
+            Console.WriteLine(isArmNum);
         }
 
 
         public static bool IsArmstrongNumber(int n)
         {
             //YOUR CODE HERE
-            return false;
+            int firstDigit = n / 100;
+            int secondDigit = (n % 100) / 10;
+            int thirdDigit =(n % 100) % 10;
+            int result = (firstDigit * firstDigit * firstDigit) + (secondDigit * secondDigit * secondDigit) + (thirdDigit * thirdDigit * thirdDigit);
+            if (result == n)
+                return true;
+            else
+                return false;
 
         }
     }

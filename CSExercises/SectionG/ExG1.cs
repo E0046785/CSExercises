@@ -20,9 +20,9 @@ namespace CSExercises
             Console.Write("Please enter a phrase: ");
             string phrase = Console.ReadLine();
 
-            Console.WriteLine("Total number of vowels: " + CountVowels(phrase));
+            Console.WriteLine("Total number of vowels: " + CountVowels(phrase.ToLower()));
 
-            int[] vowelCount = CountIndividualVowels(phrase);
+            int[] vowelCount = CountIndividualVowels(phrase.ToLower());
             for (int i = 0; i < 5; i++)
             {
                 Console.WriteLine("Number of {0}: {1}", vowels[i], vowelCount[i]);
@@ -30,21 +30,44 @@ namespace CSExercises
         }
 
         public static int CountVowels(string phrase)
-        {
+        {  
+            int vowelCount =0;
+              
             //YOUR CODE HERE
-            return 0;
+            for (int i = 0; i<phrase.Length; i++)
+            {
+                for(int j=0;j<vowels.Length;j++)
+                {
+                    if (phrase[i] == vowels[j])
+                    {
+                        vowelCount++;
+                    }
+                }
+            }
+            return vowelCount;
 
 
         }
 
         public static int[] CountIndividualVowels(string phrase)
         {
+            
             int[] vowelCount = new int[5];
-            //YOUR CODE HERE
+                        //YOUR CODE HERE
+            for (int i = 0; i<phrase.Length;i++)
+            {
+                for (int j = 0; j <vowels.Length; j++)
+                {
+                    if (phrase[i] == vowels[j])
+                    {
+
+                        vowelCount[j] = vowelCount[j] + 1;
+                    }
+                }
+            }
 
 
-
-            return vowelCount;
+                return vowelCount;
         }
     }
 }

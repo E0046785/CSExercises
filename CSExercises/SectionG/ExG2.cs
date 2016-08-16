@@ -3,11 +3,13 @@
 namespace CSExercises
 {
     //Write a C# program to determine if a given string is a palindrome.
-    //    a.Your program should take a string from the console and test if the word is a palindrome or not using the approach explained by your instructor(you are expected to follow the steps given by the instructor)
+    //    a.Your program should take a string from the console and test if the word is a palindrome or not using the
+    //approach explained by your instructor(you are expected to follow the steps given by the instructor)
     //–	A palindrome is a word/phrase that reads the same forwards or backwards.
     //–	Examples: ABBA, 747, radar, madam
 
-    //b.	Modify the above program to accommodate sentences which may have upper case letters, punctuation or space that may need to be ignored while doing the test.
+    //b.	Modify the above program to accommodate sentences which may have upper case letters,
+    //punctuation or space that may need to be ignored while doing the test.
     //–	Examples:
     //A Santa at NASA
     //Mr.Owl ate my metal worm
@@ -31,12 +33,46 @@ namespace CSExercises
 
         public static bool IsPalindrome(string phrase)
         {
-            //YOUR CODE HERE
-            return false;
+             bool isPalindrome = false;
 
+            //YOUR CODE HERE
+            //Char[] c=new Char[]{'.',
+            //                    ' ',
+            //                    ',',
+            //                     ':',
+            //                     ';'};
+            string[] wordList = phrase.Split(' ');
+            int count = 0;
+
+            for (int i = 0; i < wordList.Length; i++)
+            {
+                int k = 0;
+                string word = wordList[i];
+                char[] charArray = new char[word.Length];
+                for (int j = word.Length - 1; j >= 0; j--)
+                {
+                    charArray[k] = word[j];
+                    k++;
+                }
+
+                string lastString = new String(charArray);
+                if (word.CompareTo(lastString) == 0)
+                {
+                    isPalindrome = true;
+                    break;
+                }
+                else
+                {
+                    isPalindrome = false;
+                }
+            }
+
+            return isPalindrome;
 
 
 
         }
+
+        
     }
 }

@@ -22,7 +22,31 @@ namespace CSExercises
     {
         public static void Main(string[] args)
         {
+            double num = 1.0;
             //YOUR CODE HERE
+            for (int i = 1; i <= 10; i++) 
+            { 
+          //  double num = Convert.ToDouble(Console.ReadLine());
+
+                double inverse = 1 / i;
+            double sqrRootNum = Math.Sqrt(num);
+            double sqrNum = Math.Pow(num, 2);
+
+
+            if (i == 1)
+            {
+                Console.WriteLine("No\tINVERSE\t\tSQUARE ROOT\t\tSQUARE");
+                Console.WriteLine("{0:0.0}\t{1:0.0##}\t\t{2:0.0##}\t\t\t{3:0.0}", num, inverse, sqrRootNum, sqrNum);
+            }
+            else
+            {
+                Console.WriteLine("{0:0.0}\t{1:0.0##}\t\t{2:0.0##}\t\t\t{3:0.0}", num, inverse, sqrRootNum, sqrNum);
+            }
+            num = num + 1;
+
         }
+            
+    
+      }
     }
 }

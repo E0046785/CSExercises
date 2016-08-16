@@ -21,17 +21,23 @@ namespace CSExercises
             Console.Write("Enter a number: ");
             int n = Convert.ToInt32(Console.ReadLine());
 
-            int fact1 = CalculateFactorialInc(n);
+           int fact1 = CalculateFactorialInc(n);
             Console.WriteLine(fact1);
 
-            int fact2 = CalculateFactorialDec(n);
-            Console.WriteLine(fact2);
+           // int fact2 = CalculateFactorialDec(n);
+            //Console.WriteLine(fact2);
         }
 
         public static int CalculateFactorialInc(int n)
         {
+            int incNum=1;
             //YOUR CODE HERE
-            return 0;
+            for (int i =1; i <= n; i++)
+            {
+                incNum  *= n ;
+
+            }
+            return incNum;
 
 
         }
@@ -39,7 +45,14 @@ namespace CSExercises
         public static int CalculateFactorialDec(int n)
         {
             //YOUR CODE HERE
-            return 0;
+            int incNum = 1;
+            //YOUR CODE HERE
+            for (int i = n; i >= 1 ; i--)
+            {
+                incNum *= i;
+
+            }
+            return incNum;
 
 
         }

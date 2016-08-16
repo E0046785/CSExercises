@@ -17,26 +17,46 @@ namespace CSExercises
 
         public static void Main(string[] args)
         {
-            Console.Write("Please enter an integer: ");
-            int n = Convert.ToInt32(Console.ReadLine());
+            //Console.Write("Please enter an integer: ");
+            //int n = Convert.ToInt32(Console.ReadLine());
 
 
-            if (IsPrime(n))
+            //if (IsPrime(n))
+            //{
+            //    Console.WriteLine("Prime");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Not Prime");
+            //}
+            for (int i = 1; i < 100; i++)
             {
-                Console.WriteLine("Prime");
-            }
-            else
-            {
-                Console.WriteLine("Not Prime");
+                if (IsPrime(i))
+                {
+                    Console.WriteLine(i + " Prime");
+                }
             }
         }
 
         public static bool IsPrime(int n)
         {
+            int i = 0;
             //YOUR CODE HERE
-            return false;
+            bool isPrime = true;
+            for (i = 2; i < n; i++)
+            {
+                if (n % i == 0)
+                {
+                    isPrime = false;
+                }
+            }
+            if(n == 1)
+            {
+                isPrime = false;
+            }
+            
 
-
+            return isPrime;
         }
     }
 }
